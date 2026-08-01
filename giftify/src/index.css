@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #4B4B4B;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.01em;
+}
+
+button, .btn-text {
+  font-family: 'Montserrat', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0b0b;
+}
+::-webkit-scrollbar-thumb {
+  background: #c89b3c;
+  border-radius: 10px;
+}
+
+/* Subtle glass accent — used sparingly, mainly on the hero image card */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(200, 155, 60, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Primary CTA — solid gold */
+.btn-gold {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #d8b56a, #c89b3c);
+  color: #0b0b0b;
+  transition: all 0.3s ease;
+}
+.btn-gold:hover {
+  box-shadow: 0 10px 28px rgba(200, 155, 60, 0.45);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Secondary CTA — solid black */
+.btn-ink {
+  font-family: 'Montserrat', sans-serif;
+  background: #0b0b0b;
+  color: #ffffff;
+  border: 1px solid rgba(200, 155, 60, 0.4);
+  transition: all 0.3s ease;
+}
+.btn-ink:hover {
+  background: #1a1a1a;
+  box-shadow: 0 10px 28px rgba(11, 11, 11, 0.35);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Ghost / outline CTA on dark backgrounds */
+.btn-outline-gold {
+  font-family: 'Montserrat', sans-serif;
+  background: transparent;
+  border: 1.5px solid #c89b3c;
+  color: #d8b56a;
+  transition: all 0.3s ease;
+}
+.btn-outline-gold:hover {
+  background: #c89b3c;
+  color: #0b0b0b;
+  transform: translateY(-2px);
+}
+
+/* Ghost / outline CTA on light backgrounds */
+.btn-outline-ink {
+  font-family: 'Montserrat', sans-serif;
+  background: transparent;
+  border: 1.5px solid #0b0b0b;
+  color: #0b0b0b;
+  transition: all 0.3s ease;
+}
+.btn-outline-ink:hover {
+  background: #0b0b0b;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #d8b56a, #c89b3c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Card hover-lift used across product/category/gallery cards */
+.card-lift {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.card-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 48px rgba(11, 11, 11, 0.18);
+}
+
+/* Gentle image zoom on hover */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.6s ease;
+}
+.img-zoom:hover img {
+  transform: scale(1.07);
+}
+
+/* Thin gold underline for active nav links */
+.nav-underline {
+  position: relative;
+}
+.nav-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 0;
+  background: #c89b3c;
+  transition: width 0.3s ease;
+}
+.nav-underline:hover::after,
+.nav-underline.active::after {
+  width: 100%;
+}
+
+/* Swiper theming — gold accents on black */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #c89b3c !important;
+  background: rgba(0, 0, 0, 0.5);
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 9999px;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 14px !important;
+  font-weight: 700;
+}
+.swiper-pagination-bullet {
+  background: rgba(200, 155, 60, 0.4) !important;
+}
+.swiper-pagination-bullet-active {
+  background: #c89b3c !important;
+}
