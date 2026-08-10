@@ -32,7 +32,13 @@ export default function Hero() {
               Explore Now <FiArrowRight />
             </motion.a>
     <motion.a
-  href="https://wa.me/916369107200?text=Hi%20MS%20Frames,%20I%20would%20like%20to%20place%20an%20order."
+  href={`https://wa.me/916369107200?text=${encodeURIComponent(`🎉 Thank you for your order with MS FRAMES!
+
+Your order has been received successfully. ✅
+
+Our team will review it and contact you if any confirmation is needed. We'll begin processing your order as soon as possible.
+
+Thank you for trusting MS FRAMES to frame your precious memories. ❤️`)}`}
   target="_blank"
   rel="noopener noreferrer"
   whileHover={{ scale: 1.04 }}

@@ -1,13 +1,69 @@
+import img0015 from '../assets/IMG-20260809-WA0015.jpg.jpeg';
+import img0017 from '../assets/IMG-20260809-WA0017.jpg.jpeg';
+import img0020 from '../assets/IMG-20260809-WA0020.jpg.jpeg';
+import img0022 from '../assets/IMG-20260809-WA0022.jpg.jpeg';
+import img0023 from '../assets/IMG-20260809-WA0023.jpg.jpeg';
+import img0024 from '../assets/IMG-20260809-WA0024.jpg.jpeg';
+import img0025 from '../assets/IMG-20260809-WA0025.jpg.jpeg';
+import img0026 from '../assets/IMG-20260809-WA0026.jpg.jpeg';
+import img0027 from '../assets/IMG-20260809-WA0027.jpg.jpeg';
+import img0029 from '../assets/IMG-20260809-WA0029.jpg.jpeg';
+import img0030 from '../assets/IMG-20260809-WA0030.jpg.jpeg';
+import img0031 from '../assets/IMG-20260809-WA0031.jpg.jpeg';
+import img0032 from '../assets/IMG-20260809-WA0032.jpg.jpeg';
+import img0033 from '../assets/IMG-20260809-WA0033.jpg.jpeg';
+import img0034 from '../assets/IMG-20260809-WA0034.jpg.jpeg';
+import img0035 from '../assets/IMG-20260809-WA0035.jpg.jpeg';
+import img0036 from '../assets/IMG-20260809-WA0036.jpg.jpeg';
+import img0038 from '../assets/IMG-20260809-WA0038.jpg.jpeg';
+import img0039 from '../assets/IMG-20260809-WA0039.jpg.jpeg';
+import img0040 from '../assets/IMG-20260809-WA0040.jpg.jpeg';
+import img0041 from '../assets/IMG-20260809-WA0041.jpg.jpeg';
+import img0042 from '../assets/IMG-20260809-WA0042.jpg.jpeg';
+import img0043 from '../assets/IMG-20260809-WA0043.jpg.jpeg';
+import img0044 from '../assets/IMG-20260809-WA0044.jpg.jpeg';
+import img0045 from '../assets/IMG-20260809-WA0045.jpg.jpeg';
+import img0046 from '../assets/IMG-20260809-WA0046.jpg.jpeg';
+import img0047 from '../assets/IMG-20260809-WA0047.jpg.jpeg';
+import img0048 from '../assets/IMG-20260809-WA0048.jpg.jpeg';
+import img0049 from '../assets/IMG-20260809-WA0049.jpg.jpeg';
+import img0050 from '../assets/IMG-20260809-WA0050.jpg.jpeg';
+import img0051 from '../assets/IMG-20260809-WA0051.jpg.jpeg';
+import img0052 from '../assets/IMG-20260809-WA0052.jpg.jpeg';
+
 export const galleryWorks = [
-  { id: 1, category: 'Wedding Frames', image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80', tall: true },
-  { id: 2, category: 'Baby Frames', image: 'https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&q=80' },
-  { id: 3, category: 'Anniversary Gifts', image: 'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=600&q=80', tall: true },
-  { id: 4, category: 'Canvas Prints', image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&q=80' },
-  { id: 5, category: 'Certificates', image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80' },
-  { id: 6, category: 'Mirror Frames', image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80', tall: true },
-  { id: 7, category: 'Wedding Frames', image: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=80' },
-  { id: 8, category: 'Canvas Prints', image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&q=80' },
-  { id: 9, category: 'Baby Frames', image: 'https://images.unsplash.com/photo-1522771930-78848d9293e8?w=600&q=80', tall: true },
+  { id: 1, category: 'Goodframs', image: img0015, tall: true },
+  { id: 2, category: 'Goodframs', image: img0017 },
+  { id: 3, category: 'Goodframs', image: img0031, tall: true },
+  { id: 4, category: 'Goodframs', image: img0038 },
+  { id: 5, category: 'Goodframs', image: img0050, tall: true },
+  { id: 6, category: 'Wedding Frames', image: img0020 },
+  { id: 7, category: 'Wedding Frames', image: img0022, tall: true },
+  { id: 8, category: 'Wedding Frames', image: img0023 },
+  { id: 9, category: 'Wedding Frames', image: img0026 },
+  { id: 10, category: 'Baby Frames', image: img0024 },
+  { id: 11, category: 'Baby Frames', image: img0025, tall: true },
+  { id: 12, category: 'Wedding Frames', image: img0029, tall: true },
+  { id: 13, category: 'Wedding Frames', image: img0030 },
+  { id: 14, category: 'Wedding Frames', image: img0034, tall: true },
+  { id: 15, category: 'Wedding Frames', image: img0027, tall: true },
+  { id: 16, category: 'Anniversary Gifts', image: img0032 },
+  { id: 17, category: 'Anniversary Gifts', image: img0033, tall: true },
+  { id: 18, category: 'Anniversary Gifts', image: img0035 },
+  { id: 19, category: 'Anniversary Gifts', image: img0036 },
+  { id: 20, category: 'Anniversary Gifts', image: img0039 },
+  { id: 21, category: 'Anniversary Gifts', image: img0040 },
+  { id: 22, category: 'Anniversary Gifts', image: img0041, tall: true },
+  { id: 23, category: 'Anniversary Gifts', image: img0042 },
+  { id: 24, category: 'Anniversary Gifts', image: img0043 },
+  { id: 25, category: 'Anniversary Gifts', image: img0044, tall: true },
+  { id: 26, category: 'Anniversary Gifts', image: img0045 },
+  { id: 27, category: 'Anniversary Gifts', image: img0046 },
+  { id: 28, category: 'Anniversary Gifts', image: img0047, tall: true },
+  { id: 29, category: 'Anniversary Gifts', image: img0048 },
+  { id: 30, category: 'Anniversary Gifts', image: img0049 },
+  { id: 31, category: 'Anniversary Gifts', image: img0051 },
+  { id: 32, category: 'Anniversary Gifts', image: img0052, tall: true },
 ];
 
 export const beforeAfter = [

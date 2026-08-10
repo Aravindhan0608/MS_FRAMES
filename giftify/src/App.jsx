@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import SEO from './components/SEO';
 import ScrollProgress from './components/ScrollProgress';
 import BackToTop from './components/BackToTop';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
@@ -15,6 +16,7 @@ import Contact from './pages/Contact';
 import Reviews from './pages/Reviews';
 import Policy from './pages/Policy';
 import NotFound from './pages/NotFound';
+import { seoByPath, notFoundSeo } from './utils/seoConfig';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -63,9 +65,18 @@ const returnSections = [
 
 export default function App() {
   const location = useLocation();
+  const pageSeo = seoByPath[location.pathname];
+  const seo = pageSeo || notFoundSeo;
 
   return (
     <div className="relative min-h-screen bg-ink">
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
+        path={location.pathname}
+        noindex={!pageSeo}
+      />
       <ScrollProgress />
       <ScrollToTop />
       <Navbar />

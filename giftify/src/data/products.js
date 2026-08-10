@@ -1,3 +1,5 @@
+import walnutCollageFrameImg from '../assets/IMG-20260809-WA0034.jpg.jpeg';
+
 export const products = [
   {
     id: 1,
@@ -46,7 +48,7 @@ export const products = [
     name: 'Walnut Multi-Photo Collage Frame',
     category: 'Photo Frames',
     startingPrice: 54.0,
-    image: 'https://images.unsplash.com/photo-1465805944498-ac7c50ba7cb2?w=600&q=80',
+    image: walnutCollageFrameImg,
   },
   {
     id: 8,

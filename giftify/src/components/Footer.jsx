@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FiInstagram, FiFacebook, FiMapPin, FiPhone, FiMail, FiSend } from 'react-icons/fi';
+import { FiInstagram, FiFacebook, FiMapPin, FiPhone, FiMail, FiSend, FiHome, FiGrid, FiImage, FiInfo } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import logo from '../assets/logo1.png';
 import { categories } from '../data/categories';
@@ -12,6 +12,14 @@ const quickLinks = [
   { label: 'Gallery', to: '/gallery' },
   { label: 'About Us', to: '/about' },
   { label: 'Contact Us', to: '/contact' },
+];
+
+const mobileNavLinks = [
+  { label: 'Home', to: '/', icon: FiHome, end: true },
+  { label: 'Categories', to: '/shop', icon: FiGrid },
+  { label: 'Gallery', to: '/gallery', icon: FiImage },
+  { label: 'About Us', to: '/about', icon: FiInfo },
+  { label: 'Contact Us', to: '/contact', icon: FiMail },
 ];
 
 const legalLinks = [
@@ -127,7 +135,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gold/10 py-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-body text-white/35">
+        <div className="border-t border-gold/10 py-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-body text-white/35 pb-24 lg:pb-6">
           <p>© {new Date().getFullYear()} MS Frames. All Rights Reserved.</p>
           <div className="flex gap-4">
             <NavLink to="/privacy" className="hover:text-gold transition-colors">Privacy Policy</NavLink>
@@ -135,6 +143,49 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      <nav
+        aria-label="Mobile navigation"
+        className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-ink/95 backdrop-blur-sm border-t border-gold/15 shadow-lift"
+      >
+        <ul className="flex items-center justify-between gap-1 px-2 py-2 sm:px-3 sm:py-2.5 max-w-2xl mx-auto">
+          {mobileNavLinks.map((link) => (
+            <li key={link.label} className="flex-1 min-w-0">
+              <NavLink
+                to={link.to}
+                end={link.end}
+                className={({ isActive }) =>
+                  `group flex flex-col items-center justify-center gap-1 py-2 px-1 transition-all duration-[250ms] ease-in-out ${
+                    isActive ? 'text-gold' : 'text-white/55'
+                  }`
+                }
+              >
+                {({ isActive }) => (
+                  <>
+                    <link.icon
+                      className={`text-[1.15rem] sm:text-xl shrink-0 transition-all duration-[250ms] ease-in-out group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:text-gold group-hover:drop-shadow-[0_0_8px_rgba(200,155,60,0.4)] group-active:scale-110 group-active:-translate-y-0.5 group-active:text-gold group-active:drop-shadow-[0_0_8px_rgba(200,155,60,0.4)] ${
+                        isActive
+                          ? 'text-gold scale-105 drop-shadow-[0_0_6px_rgba(200,155,60,0.35)]'
+                          : 'text-inherit'
+                      }`}
+                    />
+                    <span className="relative font-button text-[8px] sm:text-[10px] tracking-wide uppercase leading-tight text-center truncate w-full transition-colors duration-[250ms] ease-in-out group-hover:text-gold group-active:text-gold">
+                      {link.label}
+                      <span
+                        className={`absolute -bottom-0.5 left-1/2 -translate-x-1/2 h-[2px] rounded-full bg-gold transition-all duration-[250ms] ease-in-out ${
+                          isActive
+                            ? 'w-4 opacity-100'
+                            : 'w-0 opacity-0 group-hover:w-4 group-hover:opacity-100 group-active:w-4 group-active:opacity-100'
+                        }`}
+                      />
+                    </span>
+                  </>
+                )}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </footer>
   );
 }

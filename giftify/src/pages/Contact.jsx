@@ -4,12 +4,44 @@ import { FiMail, FiPhone, FiMapPin, FiClock, FiSend, FiCheck, FiInstagram, FiFac
 import { FaWhatsapp } from 'react-icons/fa';
 import { fadeUp, slideLeft, slideRight } from '../utils/motionVariants';
 
+const RECIPIENT_EMAIL = 'msframes01@gmail.com';
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export default function Contact() {
-  const [sent, setSent] = useState(false);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [errors, setErrors] = useState({});
+  const [success, setSuccess] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSent(true);
+    setSuccess(false);
+
+    const nextErrors = {};
+    const trimmedName = name.trim();
+    const trimmedEmail = email.trim();
+    const trimmedMessage = message.trim();
+
+    if (!trimmedName) nextErrors.name = 'Name is required.';
+    if (!trimmedEmail) nextErrors.email = 'Email is required.';
+    else if (!emailPattern.test(trimmedEmail)) nextErrors.email = 'Please enter a valid email address.';
+    if (!trimmedMessage) nextErrors.message = 'Message is required.';
+
+    if (Object.keys(nextErrors).length > 0) {
+      setErrors(nextErrors);
+      return;
+    }
+
+    setErrors({});
+
+    const subject = `New Contact Message from ${trimmedName}`;
+    const body = `Name: ${trimmedName}\n\nEmail: ${trimmedEmail}\n\nMessage:\n${trimmedMessage}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(RECIPIENT_EMAIL)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+    setSuccess(true);
   };
 
   return (
@@ -77,18 +109,49 @@ export default function Contact() {
             className="md:col-span-3 rounded-xl2 p-8 border border-gold/20 bg-white/[0.03] shadow-lift flex flex-col gap-4"
           >
             <div className="grid sm:grid-cols-2 gap-4">
-              <input required placeholder="Your Name" className="bg-white/5 border border-gold/20 rounded-xl px-5 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-gold font-body text-sm" />
-              <input required type="email" placeholder="Your Email" className="bg-white/5 border border-gold/20 rounded-xl px-5 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-gold font-body text-sm" />
+              <div>
+                <input
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Your Name"
+                  className="w-full bg-white/5 border border-gold/20 rounded-xl px-5 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-gold font-body text-sm"
+                />
+                {errors.name && <p className="text-gold text-xs font-body mt-1.5">{errors.name}</p>}
+              </div>
+              <div>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your Email"
+                  className="w-full bg-white/5 border border-gold/20 rounded-xl px-5 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-gold font-body text-sm"
+                />
+                {errors.email && <p className="text-gold text-xs font-body mt-1.5">{errors.email}</p>}
+              </div>
             </div>
             <input placeholder="Subject" className="bg-white/5 border border-gold/20 rounded-xl px-5 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-gold font-body text-sm" />
-            <textarea required rows={5} placeholder="Your Message" className="bg-white/5 border border-gold/20 rounded-xl px-5 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-gold resize-none font-body text-sm" />
+            <div>
+              <textarea
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                rows={5}
+                placeholder="Your Message"
+                className="w-full bg-white/5 border border-gold/20 rounded-xl px-5 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-gold resize-none font-body text-sm"
+              />
+              {errors.message && <p className="text-gold text-xs font-body mt-1.5">{errors.message}</p>}
+            </div>
             <motion.button
               whileHover={{ scale: 1.03 }}
               type="submit"
               className="btn-gold font-semibold text-xs tracking-wide uppercase px-8 py-3.5 rounded-full flex items-center justify-center gap-2 self-start"
             >
-              {sent ? (<><FiCheck /> Sent!</>) : (<>Send Message <FiSend /></>)}
+              Send Message <FiSend />
             </motion.button>
+            {success && (
+              <p className="text-gold font-body text-sm flex items-center gap-1.5">
+                <FiCheck /> Gmail opened. Please review and send your message.
+              </p>
+            )}
           </motion.form>
         </div>
 

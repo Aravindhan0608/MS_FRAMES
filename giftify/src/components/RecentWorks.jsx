@@ -4,7 +4,7 @@ import { FiX } from 'react-icons/fi';
 import { galleryWorks } from '../data/gallery';
 import { fadeUp, staggerContainer } from '../utils/motionVariants';
 
-const filters = ['All', 'Wedding Frames', 'Baby Frames', 'Anniversary Gifts', 'Canvas Prints', 'Certificates', 'Mirror Frames'];
+const filters = ['All', 'Wedding Frames', 'Baby Frames', 'Anniversary Gifts', 'Goodframs'];
 
 export default function RecentWorks() {
   const [active, setActive] = useState('All');
