@@ -20,7 +20,7 @@ export default function BackToTop() {
           exit={{ opacity: 0, y: 20 }}
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           aria-label="Back to top"
-          className="fixed bottom-6 left-6 z-50 w-12 h-12 rounded-full bg-ink border border-gold text-gold flex items-center justify-center shadow-lift hover:bg-gold hover:text-ink transition-colors"
+          className="fixed bottom-20 left-6 z-50 w-12 h-12 rounded-full bg-ink border border-gold text-gold flex items-center justify-center shadow-lift hover:bg-gold hover:text-ink transition-colors"
         >
           <FiArrowUp />
         </motion.button>
