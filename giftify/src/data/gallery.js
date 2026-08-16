@@ -32,11 +32,11 @@ import img0051 from '../assets/IMG-20260809-WA0051.jpg.jpeg';
 import img0052 from '../assets/IMG-20260809-WA0052.jpg.jpeg';
 
 export const galleryWorks = [
-  { id: 1, category: 'Goodframs', image: img0015, tall: true },
-  { id: 2, category: 'Goodframs', image: img0017 },
-  { id: 3, category: 'Goodframs', image: img0031, tall: true },
-  { id: 4, category: 'Goodframs', image: img0038 },
-  { id: 5, category: 'Goodframs', image: img0050, tall: true },
+  { id: 1, category: 'God frams', image: img0015, tall: true },
+  { id: 2, category: 'God frams', image: img0017 },
+  { id: 3, category: 'God frams', image: img0031, tall: true },
+  { id: 4, category: 'God frams', image: img0038 },
+  { id: 5, category: 'God frams', image: img0050, tall: true },
   { id: 6, category: 'Wedding Frames', image: img0020 },
   { id: 7, category: 'Wedding Frames', image: img0022, tall: true },
   { id: 8, category: 'Wedding Frames', image: img0023 },
