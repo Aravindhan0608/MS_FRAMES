@@ -1,4 +1,5 @@
 import walnutCollageFrameImg from '../assets/IMG-20260809-WA0034.jpg.jpeg';
+import poojaRoomImg from '../assets/IMG-20260809-WA0015.jpg.jpeg';
 
 export const products = [
   {
@@ -23,25 +24,18 @@ export const products = [
     image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&q=80',
   },
   {
-    id: 4,
-    name: 'Achievement Award Frame',
-    category: 'Certificates & Awards',
-    startingPrice: 32.0,
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80',
-  },
-  {
     id: 5,
     name: 'Engraved Couple Keepsake',
-    category: 'Customized Gifts',
+    category: 'Customised Gift',
     startingPrice: 45.0,
     image: 'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=600&q=80',
   },
   {
     id: 6,
-    name: 'Premium Matte Photo Print Set',
-    category: 'Photo Printing',
+    name: 'Pooja Room Frame Set',
+    category: 'Pooja Room Setup',
     startingPrice: 18.5,
-    image: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=600&q=80',
+    image: poojaRoomImg,
   },
   {
     id: 7,
@@ -63,12 +57,5 @@ export const products = [
     category: 'Canvas Frames',
     startingPrice: 95.0,
     image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&q=80',
-  },
-  {
-    id: 10,
-    name: 'Corporate Recognition Plaque',
-    category: 'Certificates & Awards',
-    startingPrice: 38.0,
-    image: 'https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=600&q=80',
   },
 ];

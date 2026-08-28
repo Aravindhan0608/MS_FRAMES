@@ -67,7 +67,7 @@ export default function Contact() {
               { icon: FiPhone, label: 'Phone', value: '+91  6369107200' },
               { icon: FaWhatsapp, label: 'WhatsApp', value: 'Chat with us', href: 'https://wa.me/6369107200' },
               { icon: FiMail, label: 'Email', value: ' msframes01@gmail.com' },
-              { icon: FiMapPin, label: 'Address', value: 'Jawahar Nagar, Palani, Dindigul, Tamil Nadu — 624601' },
+              { icon: FiMapPin, label: 'Address', value: '7/34/L, Jawahar Nagar, Palani', href: 'https://maps.google.com/?q=MS+FRAMES,+Jawahar+Nagar,+Palani,+Dindigul,+Tamil+Nadu' },
               { icon: FiClock, label: 'Business Hours', value: 'Monday – Sunday, 9:00 AM – 8:00 PM' },
             ].map((item) => {
               const content = (

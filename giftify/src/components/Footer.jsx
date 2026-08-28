@@ -110,7 +110,7 @@ export default function Footer() {
           <div>
             <h4 className="font-heading font-semibold text-white mb-4 text-sm tracking-wide">Contact</h4>
             <ul className="flex flex-col gap-3 text-sm font-body text-white/50 mb-4">
-              <li className="flex items-center gap-2"><FiMapPin className="text-gold shrink-0" /> 128 Maple Street, Suite 4B</li>
+              <li className="flex items-center gap-2"><FiMapPin className="text-gold shrink-0" /> <a href="https://maps.google.com/?q=MS+FRAMES,+Jawahar+Nagar,+Palani,+Dindigul,+Tamil+Nadu" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">7/34/L, Jawahar Nagar, Palani</a></li>
               <li className="flex items-center gap-2"><FiPhone className="text-gold shrink-0" /> +91 6369107200</li>
               <li className="flex items-center gap-2"><FiMail className="text-gold shrink-0" /> msframes01@gmail.com</li>
             </ul>
