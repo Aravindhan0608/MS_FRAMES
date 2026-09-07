@@ -1,33 +1,53 @@
-import img0015 from '../assets/IMG-20260809-WA0015.jpg.jpeg';
+import img0020 from '../assets/img-wa0020.webp';
+import img0033 from '../assets/img-wa0033.webp';
+import img0045 from '../assets/img-wa0045.webp';
+import img0024 from '../assets/img-wa0024.webp';
+import img0015 from '../assets/img-wa0015.webp';
+
 export const categories = [
   {
     id: 1,
     name: 'Photo Frames',
-    description: 'Classic and modern frames for every space',
-    image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=700&q=80',
+    slug: 'photo-frames',
+    description: 'Classic teak, walnut, and modern acrylic frames tailored for your memories',
+    startingPrice: 499,
+    image: img0020,
+    alt: 'Classic handcrafted wooden photo frame collection by MS Frames',
   },
   {
     id: 2,
     name: 'Mirror Frames',
-    description: 'Elegant framed mirrors for home decor',
-    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=700&q=80',
+    slug: 'mirror-frames',
+    description: 'Bespoke ornate and minimalist framed mirrors for home and studio interiors',
+    startingPrice: 1299,
+    image: img0033,
+    alt: 'Luxury gold and brass finished mirror frame designed by MS Frames',
   },
   {
     id: 3,
     name: 'Canvas Frames',
-    description: 'Gallery-grade canvas prints, framed to last',
-    image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=700&q=80',
+    slug: 'canvas-frames',
+    description: 'Museum-grade textured canvas prints mounted on solid wooden stretchers',
+    startingPrice: 1499,
+    image: img0045,
+    alt: 'Premium textured canvas portrait frame with wooden border',
   },
   {
     id: 4,
-    name: 'Customised Gift',
-    description: 'Personalised keepsakes for every occasion',
-    image: 'https://images.unsplash.com/photo-1512909006721-3d6018887383?w=700&q=80',
+    name: 'Customized Gifts',
+    slug: 'customized-gifts',
+    description: 'Personalized anniversary, wedding, birthday collages, and memory keepsakes',
+    startingPrice: 699,
+    image: img0024,
+    alt: 'Custom engraved wedding and baby memory photo collage gift',
   },
   {
     id: 5,
-    name: 'Pooja Room Setup',
-    description: 'High-resolution prints on premium paper',
+    name: 'Pooja Room Frames',
+    slug: 'pooja-room-frames',
+    description: 'Sacred deity portraits, temple wall backdrops, and gold-embossed altar setups',
+    startingPrice: 899,
     image: img0015,
+    alt: 'Devotional pooja room deity photo frame with traditional gold border',
   },
 ];

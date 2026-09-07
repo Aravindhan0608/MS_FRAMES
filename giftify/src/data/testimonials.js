@@ -2,34 +2,38 @@ export const testimonials = [
   {
     id: 1,
     name: 'Aarav Mehta',
+    location: 'Palani',
     rating: 5,
     review:
-      'The framing quality is outstanding. Our wedding canvas looks like it belongs in a gallery, not a living room.',
-    photo: 'https://randomuser.me/api/portraits/men/32.jpg',
+      'The framing quality is truly exceptional. Our family wedding canvas looks like it belongs in an art gallery. The teak finish is flawless.',
+    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
   },
   {
     id: 2,
-    name: 'Sophia Lee',
+    name: 'Priya Sundaram',
+    location: 'Dindigul',
     rating: 5,
     review:
-      'I ordered a custom frame for my parents anniversary and the finishing was flawless. Delivered right on time.',
-    photo: 'https://randomuser.me/api/portraits/women/44.jpg',
+      'Ordered a custom multi-photo frame for my parents’ 25th anniversary. MS Frames shared the preview on WhatsApp and delivered it right on time.',
+    photo: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80',
   },
   {
     id: 3,
-    name: 'Daniel Osei',
-    rating: 4,
+    name: 'Karthik Raja',
+    location: 'Madurai',
+    rating: 5,
     review:
-      'Professional service from start to finish. The award frames we ordered for our office look exceptional.',
-    photo: 'https://randomuser.me/api/portraits/men/76.jpg',
+      'Ordered a sacred Lord Murugan temple altar frame. The gold foiling and crystal glass clarity exceeded all my expectations.',
+    photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
   },
   {
     id: 4,
-    name: 'Priya Nair',
+    name: 'Ananya Venkatesh',
+    location: 'Coimbatore',
     rating: 5,
     review:
-      'MS Frames turned our baby photos into a beautiful gallery wall. The team guided us through every choice.',
-    photo: 'https://randomuser.me/api/portraits/women/68.jpg',
+      'Turned our newborn baby photos into a gorgeous 9-grid wall gallery. The team guided us with matting and color choices patiently.',
+    photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
   },
 ];
 
@@ -38,82 +42,88 @@ export const allReviews = [
   {
     id: 5,
     name: 'Meera Iyer',
+    location: 'Chennai',
     rating: 5,
     review:
-      'Ordered a canvas print of our Goa vacation photo. The colors are vivid and the frame quality is excellent.',
-    photo: 'https://randomuser.me/api/portraits/women/21.jpg',
+      'Ordered a large panoramic canvas for our living room wall. Colors are vibrant and the wooden stretcher is rock solid.',
+    photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
   },
   {
     id: 6,
     name: 'Rohan Kapoor',
+    location: 'Tiruppur',
     rating: 5,
     review:
-      'Best photo framing service in town. Got a custom mirror frame for my new home and it looks stunning.',
-    photo: 'https://randomuser.me/api/portraits/men/54.jpg',
+      'Best custom framing studio in Tamil Nadu. Got a brushed brass mirror frame for my new villa and it looks stunning.',
+    photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80',
   },
   {
     id: 7,
-    name: 'Ananya Bose',
-    rating: 4,
+    name: 'Deepa Natarajan',
+    location: 'Palani',
+    rating: 5,
     review:
-      'Great communication throughout the ordering process. The certificate frame for my degree came out beautifully.',
-    photo: 'https://randomuser.me/api/portraits/women/12.jpg',
+      'Extremely polite customer service and fast turnaround. They customized the frame border to match our pooja room wood tone.',
+    photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80',
   },
   {
     id: 8,
-    name: 'Vikram Shah',
+    name: 'Vikram Chandran',
+    location: 'Salem',
     rating: 5,
     review:
-      'MS Frames helped us design a gallery wall for our new office. Professional, prompt, and reasonably priced.',
-    photo: 'https://randomuser.me/api/portraits/men/85.jpg',
+      'MS Frames framed our corporate certificates and award portraits. Clean alignment, premium glass, and fair pricing.',
+    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80',
   },
   {
     id: 9,
-    name: 'Isha Reddy',
+    name: 'Ishwarya R.',
+    location: 'Trichy',
     rating: 5,
     review:
-      'The customized gift I ordered for my sister\'s wedding was a huge hit. Beautifully packaged too.',
-    photo: 'https://randomuser.me/api/portraits/women/56.jpg',
+      'The personalized couple keepsake frame was the best wedding gift. Beautifully packed with shockproof bubble wrapping.',
+    photo: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=150&auto=format&fit=crop&q=80',
   },
   {
     id: 10,
-    name: 'Karthik Menon',
-    rating: 4,
+    name: 'Suresh Kumar',
+    location: 'Palani',
+    rating: 5,
     review:
-      'Excellent quality frames at a fair price. Delivery took a couple of days longer than expected but worth the wait.',
-    photo: 'https://randomuser.me/api/portraits/men/23.jpg',
+      'Longtime customer of MS Frames. 30 years of trust and craftsmanship in Palani. Never compromised on wood quality.',
+    photo: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&auto=format&fit=crop&q=80',
   },
 ];
 
 export const faqs = [
   {
     id: 1,
-    question: 'How long does delivery take?',
+    question: 'How long does fabrication and delivery take?',
     answer:
-      'Standard framing orders are ready within 5-7 business days. Custom and large canvas orders may take 7-10 business days depending on complexity.',
+      'Standard photo frames are processed and crafted within 1–3 business days. Delivery across Tamil Nadu takes 2–4 business days, and delivery to other states takes 4–7 business days.',
   },
   {
     id: 2,
-    question: 'Can I request a fully custom order?',
+    question: 'How can I place a custom frame order?',
     answer:
-      'Yes — use our Customize page to upload a photo, choose your frame type, size, color, and add a personal message. We will confirm the final design before printing.',
+      'You can easily use our online "Custom Order" tool to pick your frame style, dimensions, and wood finish, then click "Order via WhatsApp" to share your photo and get a digital preview proof before fabrication.',
   },
   {
     id: 3,
-    question: 'What frame sizes are available?',
+    question: 'What frame sizes and materials are available?',
     answer:
-      'We offer sizes from 5x7 inches up to large 24x36 inch panoramic canvases, along with custom dimensions on request.',
+      'We craft sizes from small 5x7 inch desk frames up to large 24x60 inch panoramic wall canvases and oversized mirrors. Materials include natural solid teak, dark walnut, brushed metal, gold-leaf synthetics, and 380 GSM archival cotton canvas.',
   },
   {
     id: 4,
     question: 'What payment methods do you accept?',
     answer:
-      'We accept all major credit and debit cards, UPI, and bank transfers. A quote is shared and confirmed before any payment is collected.',
+      'We accept all major UPI apps (Google Pay, PhonePe, Paytm), Net Banking, and direct bank transfers. Advance confirmation is processed upon digital proof approval.',
   },
   {
     id: 5,
-    question: 'What is your return policy?',
+    question: 'What is your return and replacement policy?',
     answer:
-      'Standard frames can be returned within 7 days if unused and in original packaging. Customized and personalised items are final sale unless damaged in transit.',
+      'Since custom frames are made to order for your personal photos, we provide a 100% Transit Damage Guarantee: simply notify us within 48 hours of delivery with unboxing photos if any transit damage occurs, and we will dispatch a brand-new replacement immediately at no extra charge.',
   },
 ];

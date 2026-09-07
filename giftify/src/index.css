@@ -10,6 +10,7 @@ body,
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background-color: #0B0B0B;
 }
 
 * {
@@ -18,8 +19,8 @@ body,
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: #4B4B4B;
-  background: #ffffff;
+  color: #FAF6EE;
+  background-color: #0B0B0B;
   overflow-x: hidden;
 }
 
@@ -30,6 +31,12 @@ h1, h2, h3, h4, h5, h6 {
 
 button, .btn-text {
   font-family: 'Montserrat', sans-serif;
+}
+
+/* Accessibility: Visible Keyboard Focus */
+:focus-visible {
+  outline: 2px solid #C89B3C;
+  outline-offset: 2px;
 }
 
 ::-webkit-scrollbar {
@@ -43,7 +50,7 @@ button, .btn-text {
   border-radius: 10px;
 }
 
-/* Subtle glass accent — used sparingly, mainly on the hero image card */
+/* Subtle glass accent */
 .glass-panel {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(200, 155, 60, 0.25);
@@ -56,11 +63,11 @@ button, .btn-text {
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(135deg, #d8b56a, #c89b3c);
   color: #0b0b0b;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 .btn-gold:hover {
   box-shadow: 0 10px 28px rgba(200, 155, 60, 0.45);
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-2px);
 }
 
 /* Secondary CTA — solid black */
@@ -69,12 +76,13 @@ button, .btn-text {
   background: #0b0b0b;
   color: #ffffff;
   border: 1px solid rgba(200, 155, 60, 0.4);
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 .btn-ink:hover {
   background: #1a1a1a;
+  border-color: #c89b3c;
   box-shadow: 0 10px 28px rgba(11, 11, 11, 0.35);
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-2px);
 }
 
 /* Ghost / outline CTA on dark backgrounds */
@@ -83,25 +91,11 @@ button, .btn-text {
   background: transparent;
   border: 1.5px solid #c89b3c;
   color: #d8b56a;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 .btn-outline-gold:hover {
   background: #c89b3c;
   color: #0b0b0b;
-  transform: translateY(-2px);
-}
-
-/* Ghost / outline CTA on light backgrounds */
-.btn-outline-ink {
-  font-family: 'Montserrat', sans-serif;
-  background: transparent;
-  border: 1.5px solid #0b0b0b;
-  color: #0b0b0b;
-  transition: all 0.3s ease;
-}
-.btn-outline-ink:hover {
-  background: #0b0b0b;
-  color: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -112,24 +106,24 @@ button, .btn-text {
   color: transparent;
 }
 
-/* Card hover-lift used across product/category/gallery cards */
+/* Card hover lift */
 .card-lift {
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .card-lift:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 48px rgba(11, 11, 11, 0.18);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(11, 11, 11, 0.25);
 }
 
-/* Gentle image zoom on hover */
+/* Image zoom */
 .img-zoom {
   overflow: hidden;
 }
 .img-zoom img {
-  transition: transform 0.6s ease;
+  transition: transform 0.5s ease;
 }
 .img-zoom:hover img {
-  transform: scale(1.07);
+  transform: scale(1.06);
 }
 
 /* Thin gold underline for active nav links */
@@ -144,21 +138,22 @@ button, .btn-text {
   height: 2px;
   width: 0;
   background: #c89b3c;
-  transition: width 0.3s ease;
+  transition: width 0.25s ease;
 }
 .nav-underline:hover::after,
 .nav-underline.active::after {
   width: 100%;
 }
 
-/* Swiper theming — gold accents on black */
+/* Swiper theming */
 .swiper-button-next,
 .swiper-button-prev {
   color: #c89b3c !important;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   width: 38px !important;
   height: 38px !important;
   border-radius: 9999px;
+  border: 1px solid rgba(200, 155, 60, 0.4);
 }
 .swiper-button-next::after,
 .swiper-button-prev::after {
@@ -170,4 +165,14 @@ button, .btn-text {
 }
 .swiper-pagination-bullet-active {
   background: #c89b3c !important;
+}
+
+/* Safe reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

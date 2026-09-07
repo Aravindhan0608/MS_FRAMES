@@ -6,7 +6,12 @@ export default function Policy({ title, effectiveDate, sections }) {
     <div className="pt-28 pb-24 px-4 max-w-4xl mx-auto min-h-screen bg-ink">
       <motion.div initial="hidden" animate="visible" variants={fadeUp} className="text-center pt-8 mb-12">
         <h1 className="font-heading font-bold text-3xl sm:text-4xl text-white mb-2">{title}</h1>
-        {effectiveDate && <p className="font-body text-xs tracking-widest uppercase text-gold/70">Effective Date: {effectiveDate}</p>}
+        {effectiveDate && (
+          <p className="font-body text-xs tracking-widest uppercase text-gold/80">
+            Last Updated: {effectiveDate}
+          </p>
+        )}
+        <div className="w-16 h-[2px] bg-gold mx-auto mt-4" />
       </motion.div>
 
       <div className="grid sm:grid-cols-2 gap-5">
@@ -18,10 +23,12 @@ export default function Policy({ title, effectiveDate, sections }) {
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeUp}
             custom={i}
-            className="rounded-xl2 p-6 border border-gold/15 bg-white/[0.03]"
+            className="rounded-xl2 p-6 border border-gold/15 bg-white/[0.03] shadow-card flex flex-col justify-start"
           >
-            <h2 className="font-heading font-semibold text-gold text-sm tracking-wide uppercase mb-2">{sec.heading}</h2>
-            <p className="text-sm font-body text-white/55 leading-relaxed">{sec.body}</p>
+            <h2 className="font-heading font-semibold text-gold text-sm tracking-wide uppercase mb-2">
+              {sec.heading}
+            </h2>
+            <p className="text-xs sm:text-sm font-body text-white/65 leading-relaxed">{sec.body}</p>
           </motion.div>
         ))}
       </div>

@@ -1,20 +1,22 @@
 import { motion } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa';
-
-const WHATSAPP_NUMBER = '6369107200';
+import { getWhatsAppInquiryUrl } from '../utils/constants';
 
 export default function FloatingWhatsApp() {
+  const whatsappUrl = getWhatsAppInquiryUrl();
+
   return (
     <motion.a
-      href={`https://wa.me/${WHATSAPP_NUMBER}`}
+      href={whatsappUrl}
       target="_blank"
-      rel="noreferrer"
-      aria-label="Chat with us on WhatsApp"
+      rel="noopener noreferrer"
+      aria-label="Chat with MS Frames on WhatsApp"
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       whileHover={{ scale: 1.08 }}
-      transition={{ delay: 0.6 }}
-      className="fixed bottom-20 right-6 lg:bottom-6 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lift text-2xl"
+      whileTap={{ scale: 0.95 }}
+      transition={{ delay: 0.5 }}
+      className="fixed bottom-20 right-4 sm:right-6 lg:bottom-6 z-40 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-2xl text-2xl sm:text-3xl ring-2 ring-white/20 hover:ring-gold transition-all"
     >
       <FaWhatsapp />
     </motion.a>

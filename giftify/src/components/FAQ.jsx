@@ -19,16 +19,17 @@ export default function FAQ() {
           variants={fadeUp}
           className="text-center mb-14"
         >
-          <p className="font-body text-gold tracking-[0.25em] uppercase text-xs mb-3">Got Questions?</p>
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white">
-            Frequently Asked Questions
-          </h2>
+          <p className="font-body text-gold tracking-[0.25em] uppercase text-xs mb-3">Answers to Common Questions</p>
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white">Frequently Asked Questions</h2>
           <div className="w-16 h-[2px] bg-gold mx-auto mt-4" />
         </motion.div>
 
         <div className="flex flex-col gap-4">
           {faqs.map((faq, i) => {
             const isOpen = openId === faq.id;
+            const panelId = `faq-panel-${faq.id}`;
+            const buttonId = `faq-btn-${faq.id}`;
+
             return (
               <motion.div
                 key={faq.id}
@@ -37,23 +38,26 @@ export default function FAQ() {
                 viewport={{ once: true, amount: 0.3 }}
                 variants={fadeUp}
                 custom={i}
-                whileHover={{ y: -3 }}
-                className={`card-lift rounded-xl2 overflow-hidden border shadow-card transition-colors duration-300 ${
+                className={`rounded-xl2 overflow-hidden border shadow-card transition-colors duration-300 ${
                   isOpen ? 'border-gold/50 bg-white/[0.05] shadow-lift' : 'border-gold/15 bg-white/[0.02] hover:border-gold/35'
                 }`}
               >
                 <button
+                  id={buttonId}
                   onClick={() => setOpenId(isOpen ? null : faq.id)}
-                  className="w-full flex items-center justify-between gap-4 px-7 py-5 text-left"
+                  className="w-full flex items-center justify-between gap-4 px-6 sm:px-7 py-5 text-left focus-visible:ring-2 focus-visible:ring-gold"
                   aria-expanded={isOpen}
+                  aria-controls={panelId}
                 >
                   <span className="font-body text-sm sm:text-[15px] text-white/90 flex items-start gap-3">
-                    <span className="font-heading text-gold font-semibold shrink-0">{String(i + 1).padStart(2, '0')}</span>
-                    {faq.question}
+                    <span className="font-heading text-gold font-semibold shrink-0">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span className="font-medium text-white">{faq.question}</span>
                   </span>
                   <motion.span
                     animate={{ rotate: isOpen ? 45 : 0 }}
-                    transition={{ duration: 0.25 }}
+                    transition={{ duration: 0.2 }}
                     className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center border transition-colors ${
                       isOpen ? 'bg-gold text-ink border-gold' : 'text-gold border-gold/40'
                     }`}
@@ -64,13 +68,16 @@ export default function FAQ() {
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
+                      id={panelId}
+                      role="region"
+                      aria-labelledby={buttonId}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.25 }}
                     >
-                      <div className="h-px bg-gold/10 mx-7" />
-                      <p className="px-7 pt-4 pb-6 pl-[3.25rem] text-sm font-body text-white/55 leading-relaxed">
+                      <div className="h-px bg-gold/10 mx-6 sm:mx-7" />
+                      <p className="px-6 sm:px-7 pt-4 pb-6 pl-[2.75rem] sm:pl-[3.25rem] text-xs sm:text-sm font-body text-white/65 leading-relaxed">
                         {faq.answer}
                       </p>
                     </motion.div>
