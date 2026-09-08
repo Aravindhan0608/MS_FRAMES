@@ -1,7 +1,7 @@
-import img0020 from '../assets/img-wa0020.webp';
-import img0033 from '../assets/img-wa0033.webp';
-import img0045 from '../assets/img-wa0045.webp';
-import img0024 from '../assets/img-wa0024.webp';
+import photoFramImg from '../assets/photo_fram.jpeg';
+import mirrorFramsImg from '../assets/Mirror_frams.jpg';
+import canvaFramesImg from '../assets/canva_frames.webp';
+import customsFramesImg from '../assets/customs_frames.jpg';
 import img0015 from '../assets/img-wa0015.webp';
 
 export const categories = [
@@ -11,7 +11,7 @@ export const categories = [
     slug: 'photo-frames',
     description: 'Classic teak, walnut, and modern acrylic frames tailored for your memories',
     startingPrice: 499,
-    image: img0020,
+    image: photoFramImg,
     alt: 'Classic handcrafted wooden photo frame collection by MS Frames',
   },
   {
@@ -20,7 +20,7 @@ export const categories = [
     slug: 'mirror-frames',
     description: 'Bespoke ornate and minimalist framed mirrors for home and studio interiors',
     startingPrice: 1299,
-    image: img0033,
+    image: mirrorFramsImg,
     alt: 'Luxury gold and brass finished mirror frame designed by MS Frames',
   },
   {
@@ -29,7 +29,7 @@ export const categories = [
     slug: 'canvas-frames',
     description: 'Museum-grade textured canvas prints mounted on solid wooden stretchers',
     startingPrice: 1499,
-    image: img0045,
+    image: canvaFramesImg,
     alt: 'Premium textured canvas portrait frame with wooden border',
   },
   {
@@ -38,7 +38,7 @@ export const categories = [
     slug: 'customized-gifts',
     description: 'Personalized anniversary, wedding, birthday collages, and memory keepsakes',
     startingPrice: 699,
-    image: img0024,
+    image: customsFramesImg,
     alt: 'Custom engraved wedding and baby memory photo collage gift',
   },
   {

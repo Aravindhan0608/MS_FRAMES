@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FiAward, FiCheckCircle, FiHeart, FiArrowRight } from 'react-icons/fi';
-import aboutImg from '../assets/img-wa0034.webp';
+import aboutImg from '../assets/hero-banner.jpg';
 import AnimatedStats from '../components/AnimatedStats';
 import WhyChooseUs from '../components/WhyChooseUs';
 import ProcessTimeline from '../components/ProcessTimeline';

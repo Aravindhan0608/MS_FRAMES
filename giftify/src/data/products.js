@@ -1,11 +1,11 @@
-import img0034 from '../assets/img-wa0034.webp';
-import img0033 from '../assets/img-wa0033.webp';
-import img0045 from '../assets/img-wa0045.webp';
-import img0042 from '../assets/img-wa0042.webp';
+import classicTeakImg from '../assets/Photo_Frames_Wooden_classic teak_photo.avif';
+import ornateGoldMirrorImg from '../assets/Mirror_Frames_gold.jpg';
+import largeGalleryCanvasImg from '../assets/Canvas Frames_large_gallery.webp';
+import coupleKeepsakeImg from '../assets/Customized_Gifts_personalized.webp';
 import img0015 from '../assets/img-wa0015.webp';
-import img0020 from '../assets/img-wa0020.webp';
-import img0044 from '../assets/img-wa0044.webp';
-import img0050 from '../assets/img-wa0050.webp';
+import walnutMultiImg from '../assets/Photo _Frames_walnut_multi.jpg';
+import brassAccentMirrorImg from '../assets/Mirror_Frames_polished_brass_accents.jpg';
+import panoramicCanvasImg from '../assets/Canvas Frames_panoramic.webp';
 
 export const products = [
   {
@@ -17,7 +17,7 @@ export const products = [
     sizes: ['6x8 in', '8x12 in', '12x18 in', 'Custom'],
     description:
       'Timeless solid teak wood photo frame with anti-glare crystal glass, elegant inner border beading, and moisture-resistant backing.',
-    image: img0034,
+    image: classicTeakImg,
     badge: 'Popular',
   },
   {
@@ -29,7 +29,7 @@ export const products = [
     sizes: ['18x24 in', '24x36 in', '30x48 in'],
     description:
       'Royal antique gold finish framed mirror perfect for living room focal walls, hallways, and luxury dressing areas.',
-    image: img0033,
+    image: ornateGoldMirrorImg,
     badge: 'Bestseller',
   },
   {
@@ -41,7 +41,7 @@ export const products = [
     sizes: ['12x18 in', '18x24 in', '20x30 in', '24x36 in'],
     description:
       'High-definition archival canvas print stretched over a sturdy pine wood frame with seamless border wrapping.',
-    image: img0045,
+    image: largeGalleryCanvasImg,
     badge: 'Premium',
   },
   {
@@ -53,7 +53,7 @@ export const products = [
     sizes: ['8x12 in', '12x18 in', '16x24 in'],
     description:
       'Multi-photo commemorative collage frame customized with personal names, dates, quotes, and precision photo mounting.',
-    image: img0042,
+    image: coupleKeepsakeImg,
     badge: 'Trending',
   },
   {
@@ -77,7 +77,7 @@ export const products = [
     sizes: ['12x18 in (6 photos)', '16x24 in (9 photos)', '20x30 in (12 photos)'],
     description:
       'Sophisticated grid layout frame designed to display multiple family memories in one unified, elegant wall piece.',
-    image: img0020,
+    image: walnutMultiImg,
     badge: 'Collage',
   },
   {
@@ -89,7 +89,7 @@ export const products = [
     sizes: ['20x20 in', '24x36 in', 'Custom'],
     description:
       'Contemporary minimalist round-corner mirror frame with flawless high-clarity reflection for modern home interiors.',
-    image: img0044,
+    image: brassAccentMirrorImg,
     badge: 'Luxury',
   },
   {
@@ -101,7 +101,7 @@ export const products = [
     sizes: ['12x36 in', '18x48 in', '24x60 in'],
     description:
       'Breathtaking wide-angle panoramic frame ideal for living room sofa backdrops and office executive boardrooms.',
-    image: img0050,
+    image: panoramicCanvasImg,
     badge: 'Panoramic',
   },
 ];

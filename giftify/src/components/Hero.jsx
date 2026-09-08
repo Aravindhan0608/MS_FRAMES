@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FiArrowRight } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
-import heroImg from '../assets/img-wa0034.webp';
+import heroImg from '../assets/hero-banner.jpg';
 import { getWhatsAppInquiryUrl } from '../utils/constants';
 import { fadeUp, slideRight } from '../utils/motionVariants';
 
@@ -73,7 +73,7 @@ export default function Hero() {
               src={heroImg}
               alt="Bespoke handcrafted family collage photo frame by MS Frames Palani"
               fetchpriority="high"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent flex items-end p-6">
               <div>

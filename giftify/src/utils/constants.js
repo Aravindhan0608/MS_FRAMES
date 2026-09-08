@@ -13,7 +13,7 @@ export const BUSINESS_INFO = {
   businessHours: 'Monday – Sunday: 9:00 AM – 8:00 PM',
   mapsUrl: 'https://maps.google.com/?q=MS+FRAMES,+Jawahar+Nagar,+Palani,+Dindigul,+Tamil+Nadu',
   instagramUrl: 'https://www.instagram.com/ms._frames?igsh=YTdwMDg0Y2txdzNx',
-  facebookUrl: 'https://facebook.com',
+  facebookUrl: 'https://www.facebook.com/share/1Po2RkPgXD/',
   siteUrl: 'https://msframes.com',
 };
 

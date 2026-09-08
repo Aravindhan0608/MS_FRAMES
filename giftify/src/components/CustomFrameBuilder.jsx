@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { FiCheck } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import { getWhatsAppInquiryUrl } from '../utils/constants';
-import { formatPrice } from '../utils/helpers';
 import { fadeUp } from '../utils/motionVariants';
 
 const frameTypes = [
@@ -106,7 +105,6 @@ export default function CustomFrameBuilder() {
                       {isSelected && <FiCheck className="text-gold shrink-0 mt-0.5" />}
                     </div>
                     <p className="text-xs text-white/50 mb-2">{type.desc}</p>
-                    <p className="text-xs font-semibold text-gold">From {formatPrice(type.basePrice)}</p>
                   </button>
                 );
               })}
@@ -199,9 +197,6 @@ export default function CustomFrameBuilder() {
                       <p className="font-heading font-semibold text-xs text-white">{mat.name}</p>
                       {isSelected && <FiCheck className="text-gold text-xs shrink-0" />}
                     </div>
-                    <p className="text-[11px] text-gold font-medium">
-                      {mat.price === 0 ? 'Included' : `+${formatPrice(mat.price)}`}
-                    </p>
                   </button>
                 );
               })}

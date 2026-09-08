@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { categories } from '../data/categories';
-import { formatPrice } from '../utils/helpers';
 import { fadeUp, staggerContainer } from '../utils/motionVariants';
 
 export default function Categories() {
@@ -45,7 +44,6 @@ export default function Categories() {
                   {cat.name}
                 </h3>
                 <p className="text-[11px] text-white/50 mb-2 line-clamp-2">{cat.description}</p>
-                <p className="mt-auto text-[11px] font-semibold text-gold">From {formatPrice(cat.startingPrice)}</p>
               </div>
             </Link>
           </motion.div>
