@@ -31,6 +31,13 @@ import img0050 from '../assets/img-wa0050.webp';
 import img0051 from '../assets/img-wa0051.webp';
 import img0052 from '../assets/img-wa0052.webp';
 
+import ba1Before from '../assets/before-after-1-before.jpg';
+import ba1After from '../assets/before-after-1-after.jpg';
+import ba2Before from '../assets/before-after-2-before.jpg';
+import ba2After from '../assets/before-after-2-after.jpg';
+import ba3Before from '../assets/before-after-3-before.jpg';
+import ba3After from '../assets/before-after-3-after.jpg';
+
 export const galleryWorks = [
   { id: 1, title: 'Lord Murugan Temple Altar Frame', category: 'God & Devotional Frames', image: img0015, tall: true, alt: 'Gold embossed Lord Murugan pooja altar frame' },
   { id: 2, title: 'Traditional Deity Portrait Frame', category: 'God & Devotional Frames', image: img0017, alt: 'Devotional deity portrait in antique teak frame' },
@@ -69,22 +76,22 @@ export const galleryWorks = [
 export const beforeAfter = [
   {
     id: 1,
-    before: img0020,
-    after: img0034,
+    before: ba1Before,
+    after: ba1After,
     label: 'Raw Portrait ➔ Hand-Finished Solid Teak Frame',
     desc: 'Color graded, dust cleaned, and mounted inside a bespoke teak frame with anti-reflective glass.',
   },
   {
     id: 2,
-    before: img0024,
-    after: img0025,
+    before: ba2Before,
+    after: ba2After,
     label: 'Digital Phone Photo ➔ Museum Grade Baby Portrait',
     desc: 'High-DPI upscaled, printed on archival luster paper, and finished with double cream matting.',
   },
   {
     id: 3,
-    before: img0036,
-    after: img0045,
+    before: ba3Before,
+    after: ba3After,
     label: 'Standard Photo ➔ Textured Stretched Canvas Wrap',
     desc: 'Printed on 380 GSM natural cotton canvas and hand-stretched over kiln-dried pine wood.',
   },

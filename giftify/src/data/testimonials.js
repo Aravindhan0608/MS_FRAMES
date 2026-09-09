@@ -1,39 +1,46 @@
+import avatarBharathSathishkumar from '../assets/reviews/avatar-bharath-sathishkumar.png';
+import avatarBarathSaran from '../assets/reviews/avatar-barath-saran.png';
+import avatarDK from '../assets/reviews/avatar-dk.png';
+import avatarMMP from '../assets/reviews/avatar-mm-p.png';
+import avatarArunKumar from '../assets/reviews/avatar-arun-kumar.png';
+import avatarSelvakumari from '../assets/reviews/avatar-selvakumari.png';
+import avatarDurgaiRaj from '../assets/reviews/avatar-durgai-raj.png';
+import avatarAnnamInfra from '../assets/reviews/avatar-annam-infra.png';
+import avatarKavinDharani from '../assets/reviews/avatar-kavin-dharani.png';
+import avatarNithiAnantham from '../assets/reviews/avatar-nithi-anantham.png';
+
 export const testimonials = [
   {
     id: 1,
-    name: 'Aarav Mehta',
-    location: 'Palani',
+    name: 'Bharath Sathishkumar',
     rating: 5,
     review:
-      'The framing quality is truly exceptional. Our family wedding canvas looks like it belongs in an art gallery. The teak finish is flawless.',
-    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
+      'MS Frames la frame quality romba nalla iruku. Finishing neat-aa pannirukanga, price um reasonable. Service um fast-aa kuduthanga. Overall very satisfied. Recommended!',
+    photo: avatarBharathSathishkumar,
   },
   {
     id: 2,
-    name: 'Priya Sundaram',
-    location: 'Dindigul',
+    name: 'BARATH SARAN',
     rating: 5,
     review:
-      'Ordered a custom multi-photo frame for my parents’ 25th anniversary. MS Frames shared the preview on WhatsApp and delivered it right on time.',
-    photo: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80',
+      'A perfect blend of quality and aesthetics Highly recommended! Great quality frame. 🌟 👌',
+    photo: avatarBarathSaran,
   },
   {
     id: 3,
-    name: 'Karthik Raja',
-    location: 'Madurai',
+    name: 'DK',
     rating: 5,
     review:
-      'Ordered a sacred Lord Murugan temple altar frame. The gold foiling and crystal glass clarity exceeded all my expectations.',
-    photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
+      'Excellent work by MS Frame! The owner was very friendly and professional. Great quality...',
+    photo: avatarDK,
   },
   {
     id: 4,
-    name: 'Ananya Venkatesh',
-    location: 'Coimbatore',
+    name: 'MM P',
     rating: 5,
     review:
-      'Turned our newborn baby photos into a gorgeous 9-grid wall gallery. The team guided us with matting and color choices patiently.',
-    photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+      'நல்ல தரம்...நம்பி கொடுக்கலாம்....நல்லா இருக்குது மிக்க நன்றி 🙏',
+    photo: avatarMMP,
   },
 ];
 
@@ -41,59 +48,48 @@ export const allReviews = [
   ...testimonials,
   {
     id: 5,
-    name: 'Meera Iyer',
-    location: 'Chennai',
+    name: 'ARUN KUMAR',
     rating: 5,
-    review:
-      'Ordered a large panoramic canvas for our living room wall. Colors are vibrant and the wooden stretcher is rock solid.',
-    photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
+    review: 'Nice quality kind staff',
+    photo: avatarArunKumar,
   },
   {
     id: 6,
-    name: 'Rohan Kapoor',
-    location: 'Tiruppur',
+    name: 'Selvakumari 2023',
     rating: 5,
-    review:
-      'Best custom framing studio in Tamil Nadu. Got a brushed brass mirror frame for my new villa and it looks stunning.',
-    photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80',
+    review: 'Good offer 👍👍👍and good Service',
+    photo: avatarSelvakumari,
   },
   {
     id: 7,
-    name: 'Deepa Natarajan',
-    location: 'Palani',
+    name: 'durgai raj',
     rating: 5,
-    review:
-      'Extremely polite customer service and fast turnaround. They customized the frame border to match our pooja room wood tone.',
-    photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80',
+    review: 'Nice quality and low cost supper',
+    photo: avatarDurgaiRaj,
   },
   {
     id: 8,
-    name: 'Vikram Chandran',
-    location: 'Salem',
+    name: 'Annam Infra',
     rating: 5,
-    review:
-      'MS Frames framed our corporate certificates and award portraits. Clean alignment, premium glass, and fair pricing.',
-    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80',
+    review: 'Affordable and supportive.',
+    photo: avatarAnnamInfra,
   },
   {
     id: 9,
-    name: 'Ishwarya R.',
-    location: 'Trichy',
+    name: 'Kavin Dharani',
     rating: 5,
-    review:
-      'The personalized couple keepsake frame was the best wedding gift. Beautifully packed with shockproof bubble wrapping.',
-    photo: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=150&auto=format&fit=crop&q=80',
+    review: 'Very Good',
+    photo: avatarKavinDharani,
   },
   {
     id: 10,
-    name: 'Suresh Kumar',
-    location: 'Palani',
+    name: 'Nithi Anantham',
     rating: 5,
-    review:
-      'Longtime customer of MS Frames. 30 years of trust and craftsmanship in Palani. Never compromised on wood quality.',
-    photo: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&auto=format&fit=crop&q=80',
+    review: 'Fantastic',
+    photo: avatarNithiAnantham,
   },
 ];
+
 
 export const faqs = [
   {
