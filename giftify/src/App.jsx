@@ -16,6 +16,12 @@ import Contact from './pages/Contact';
 import Reviews from './pages/Reviews';
 import Policy from './pages/Policy';
 import NotFound from './pages/NotFound';
+import AdminLogin from './admin/pages/AdminLogin';
+import AdminDashboard from './admin/pages/AdminDashboard';
+import AdminGallery from './admin/pages/AdminGallery';
+import AdminReviews from './admin/pages/AdminReviews';
+import AdminLayout from './admin/components/AdminLayout';
+import ProtectedRoute from './admin/components/ProtectedRoute';
 import { privacySections, termsSections, shippingSections, returnSections } from './data/policies';
 import { seoByPath, notFoundSeo } from './utils/seoConfig';
 
@@ -29,21 +35,26 @@ function ScrollToTop() {
 
 export default function App() {
   const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith('/admin');
   const pageSeo = seoByPath[location.pathname];
   const seo = pageSeo || notFoundSeo;
 
   return (
-    <div className="relative min-h-screen bg-ink text-white selection:bg-gold selection:text-ink font-body">
-      <SEO
-        title={seo.title}
-        description={seo.description}
-        keywords={seo.keywords}
-        path={location.pathname}
-        noindex={!pageSeo}
-      />
-      <ScrollProgress />
-      <ScrollToTop />
-      <Navbar />
+    <div className={`relative min-h-screen ${isAdminRoute ? 'bg-slate-950 text-slate-100' : 'bg-ink text-white selection:bg-gold selection:text-ink'} font-body`}>
+      {!isAdminRoute && (
+        <>
+          <SEO
+            title={seo.title}
+            description={seo.description}
+            keywords={seo.keywords}
+            path={location.pathname}
+            noindex={!pageSeo}
+          />
+          <ScrollProgress />
+          <ScrollToTop />
+          <Navbar />
+        </>
+      )}
 
       <AnimatePresence mode="wait">
         <motion.main
@@ -54,6 +65,40 @@ export default function App() {
           transition={{ duration: 0.25 }}
         >
           <Routes location={location}>
+            {/* Admin Routes */}
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute>
+                  <AdminLayout title="Dashboard Overview">
+                    <AdminDashboard />
+                  </AdminLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/gallery"
+              element={
+                <ProtectedRoute>
+                  <AdminLayout title="Gallery Management">
+                    <AdminGallery />
+                  </AdminLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/reviews"
+              element={
+                <ProtectedRoute>
+                  <AdminLayout title="Review Management">
+                    <AdminReviews />
+                  </AdminLayout>
+                </ProtectedRoute>
+              }
+            />
+
+            {/* Existing Public Routes */}
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/customize" element={<Customize />} />
@@ -82,9 +127,13 @@ export default function App() {
         </motion.main>
       </AnimatePresence>
 
-      <Footer />
-      <BackToTop />
-      <FloatingWhatsApp />
+      {!isAdminRoute && (
+        <>
+          <Footer />
+          <BackToTop />
+          <FloatingWhatsApp />
+        </>
+      )}
     </div>
   );
 }

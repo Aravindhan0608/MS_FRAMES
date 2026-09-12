@@ -1,14 +1,42 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiX, FiChevronLeft, FiChevronRight, FiMaximize2 } from 'react-icons/fi';
-import { galleryWorks } from '../data/gallery';
+import { getPublicGallery } from '../admin/services/api';
 import { fadeUp, staggerContainer } from '../utils/motionVariants';
 
 const filters = ['All', 'Wedding Frames', 'Baby Frames', 'Anniversary Gifts', 'God & Devotional Frames'];
 
 export default function RecentWorks() {
+  const [galleryWorks, setGalleryWorks] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
   const [active, setActive] = useState('All');
   const [lightboxIndex, setLightboxIndex] = useState(null);
+
+  useEffect(() => {
+    let isMounted = true;
+    const fetchGallery = async () => {
+      try {
+        const data = await getPublicGallery();
+        if (isMounted) {
+          setGalleryWorks(data);
+        }
+      } catch (err) {
+        if (isMounted) {
+          setError('Unable to load gallery at the moment.');
+        }
+      } finally {
+        if (isMounted) {
+          setLoading(false);
+        }
+      }
+    };
+
+    fetchGallery();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const items = active === 'All' ? galleryWorks : galleryWorks.filter((g) => g.category === active);
 
@@ -84,43 +112,67 @@ export default function RecentWorks() {
         ))}
       </div>
 
+      {/* Loading State */}
+      {loading && (
+        <div className="py-20 text-center text-white/60 font-body text-xs flex flex-col items-center justify-center gap-3">
+          <div className="w-8 h-8 rounded-full border-2 border-gold border-t-transparent animate-spin" />
+          <span>Loading gallery collection...</span>
+        </div>
+      )}
+
+      {/* Error State */}
+      {error && !loading && (
+        <div className="py-16 text-center text-white/60 font-body text-xs">
+          {error}
+        </div>
+      )}
+
+      {/* Empty State */}
+      {!loading && !error && items.length === 0 && (
+        <div className="py-16 text-center text-white/60 font-body text-xs">
+          No gallery items available yet.
+        </div>
+      )}
+
       {/* Masonry Columns */}
-      <motion.div
-        key={active}
-        initial="hidden"
-        animate="visible"
-        variants={staggerContainer}
-        className="columns-1 sm:columns-2 md:columns-3 gap-4 [column-fill:_balance]"
-      >
-        {items.map((item, i) => (
-          <motion.div
-            key={item.id}
-            variants={fadeUp}
-            custom={i}
-            className="mb-4 break-inside-avoid"
-          >
-            <button
-              type="button"
-              onClick={() => setLightboxIndex(i)}
-              aria-label={`View enlarged photo: ${item.title || item.category}`}
-              className="group relative w-full rounded-xl2 overflow-hidden shadow-card hover:shadow-lift block ring-1 ring-gold/15 bg-black/40 focus-visible:ring-2 focus-visible:ring-gold text-left"
+      {!loading && !error && items.length > 0 && (
+        <motion.div
+          key={active}
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+          className="columns-1 sm:columns-2 md:columns-3 gap-4 [column-fill:_balance]"
+        >
+          {items.map((item, i) => (
+            <motion.div
+              key={item._id || item.id || i}
+              variants={fadeUp}
+              custom={i}
+              className="mb-4 break-inside-avoid"
             >
-              <img
-                src={item.image}
-                alt={item.alt || item.title || item.category}
-                loading="lazy"
-                className={`w-full object-cover transition-transform duration-500 group-hover:scale-105 ${
-                  item.tall ? 'h-72 sm:h-80' : 'h-48 sm:h-56'
-                }`}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                <span className="text-[10px] text-gold font-button uppercase tracking-widest">{item.category}</span>
-                <p className="text-sm font-heading font-semibold text-white truncate">{item.title}</p>
-              </div>
-            </button>
-          </motion.div>
-        ))}
-      </motion.div>
+              <button
+                type="button"
+                onClick={() => setLightboxIndex(i)}
+                aria-label={`View enlarged photo: ${item.title || item.category}`}
+                className="group relative w-full rounded-xl2 overflow-hidden shadow-card hover:shadow-lift block ring-1 ring-gold/15 bg-black/40 focus-visible:ring-2 focus-visible:ring-gold text-left"
+              >
+                <img
+                  src={item.imageUrl || item.image}
+                  alt={item.alt || item.title || item.category}
+                  loading="lazy"
+                  className={`w-full object-cover transition-transform duration-500 group-hover:scale-105 ${
+                    item.tall !== undefined ? (item.tall ? 'h-72 sm:h-80' : 'h-48 sm:h-56') : (i % 3 === 0 ? 'h-72 sm:h-80' : 'h-48 sm:h-56')
+                  }`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                  <span className="text-[10px] text-gold font-button uppercase tracking-widest">{item.category}</span>
+                  <p className="text-sm font-heading font-semibold text-white truncate">{item.title}</p>
+                </div>
+              </button>
+            </motion.div>
+          ))}
+        </motion.div>
+      )}
 
       {/* Accessible Lightbox Modal */}
       <AnimatePresence>
@@ -164,11 +216,11 @@ export default function RecentWorks() {
             {/* Image Preview Box */}
             <div className="relative max-h-[85vh] max-w-4xl flex flex-col items-center">
               <motion.img
-                key={activeItem.id}
+                key={activeItem._id || activeItem.id || lightboxIndex}
                 initial={{ opacity: 0, scale: 0.94 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.25 }}
-                src={activeItem.image}
+                src={activeItem.imageUrl || activeItem.image}
                 alt={activeItem.alt || activeItem.title}
                 className="max-h-[75vh] max-w-full rounded-xl shadow-2xl ring-1 ring-gold/40 object-contain"
               />

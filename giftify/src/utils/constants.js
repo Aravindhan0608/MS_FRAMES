@@ -29,7 +29,7 @@ export function getWhatsAppInquiryUrl(params = {}) {
   }
 
   if (params.type === 'product') {
-    const text = `Hi MS Frames, I'm interested in the *${params.name || 'Photo Frame'}* (${params.category || 'Frames'}) priced from ₹${params.price || '499'}. Could you share available sizes and customization options?`;
+    const text = `Hi MS Frames, I'm interested in the *${params.name || 'Photo Frame'}* (${params.category || 'Frames'}). Could you share available sizes and customization options?`;
     return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
   }
 
