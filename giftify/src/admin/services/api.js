@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_BASE = import.meta.env.VITE_API_URL || '';
 
 const TOKEN_KEY = 'msframes_admin_token';
 const USER_KEY = 'msframes_admin_user';

@@ -1,23 +1,39 @@
 import mongoose from 'mongoose';
 
-/**
- * Reusable MongoDB connection function using Mongoose.
- * Reads connection URI strictly from process.env.MONGODB_URI.
- */
-export const connectDB = async () => {
-  const mongoUri = process.env.MONGODB_URI;
+const MONGODB_URI = process.env.MONGODB_URI;
 
-  if (!mongoUri) {
-    console.warn('⚠️ [MongoDB Warning]: MONGODB_URI is not set in environment variables. Database connection skipped.');
-    return null;
+if (!MONGODB_URI) {
+  throw new Error('MONGODB_URI is not defined');
+}
+
+let cached = global.mongoose;
+
+if (!cached) {
+  cached = global.mongoose = {
+    conn: null,
+    promise: null,
+  };
+}
+
+export async function connectDB() {
+  if (cached.conn) {
+    return cached.conn;
+  }
+
+  if (!cached.promise) {
+    cached.promise = mongoose.connect(MONGODB_URI, {
+      bufferCommands: false,
+      maxPoolSize: 10,
+      serverSelectionTimeoutMS: 5000,
+    });
   }
 
   try {
-    const conn = await mongoose.connect(mongoUri);
-    console.log(`✅ [MongoDB Connected]: ${conn.connection.host}`);
-    return conn;
+    cached.conn = await cached.promise;
   } catch (error) {
-    console.error(`❌ [MongoDB Connection Error]: ${error.message}`);
-    return null;
+    cached.promise = null;
+    throw error;
   }
-};
+
+  return cached.conn;
+}

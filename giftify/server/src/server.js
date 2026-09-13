@@ -11,7 +11,9 @@ import reviewRoutes from './routes/review.routes.js';
 dotenv.config();
 
 // Configure DNS servers for resolving SRV records reliably
-dns.setServers(['8.8.8.8', '8.8.4.4']);
+if (!process.env.VERCEL) {
+  dns.setServers(['8.8.8.8', '8.8.4.4']);
+}
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -48,8 +50,10 @@ app.use('/api/gallery', galleryRoutes);
 app.use('/api/reviews', reviewRoutes);
 
 // Start Server
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
 
 export default app;
